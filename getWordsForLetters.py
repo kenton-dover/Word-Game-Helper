@@ -2,13 +2,14 @@ import itertools
 import os
 import urllib.request
 import sys
+import time
 
 # PREWORK
 DICTIONARY = os.path.join(sys.path[0], 'words.txt')
 dictionary = []
 with open(DICTIONARY) as f:
     [dictionary.append(word.strip().lower()) for word in f.read().split()]
-
+dictionary = set(dictionary)
 
 def get_possible_dict_words(draw):
     """Get all possible words from a draw (list of letters) which are
@@ -40,8 +41,11 @@ def _get_permutations_draw(draw):
 
 
 def main():
-    draw = input("Please enter each letter seperated by spaces: ").split(" ")
-    print(get_possible_dict_words(draw))
+    draw = input("Please enter each letter without any spaces: ")
+    start = time.time()
+    print(get_possible_dict_words(list(draw)))
+    end = time.time()
+    print(end - start)
 
 
 if __name__ == '__main__':
