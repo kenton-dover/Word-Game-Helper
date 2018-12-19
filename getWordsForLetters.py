@@ -42,10 +42,7 @@ def _get_permutations_draw(draw):
 
 def main():
     draw = input("Please enter each letter without any spaces: ")
-    start = time.time()
     print(get_possible_dict_words(list(draw)))
-    end = time.time()
-    print(end - start)
 
 
 if __name__ == '__main__':
