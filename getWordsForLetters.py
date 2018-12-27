@@ -11,6 +11,7 @@ with open(DICTIONARY) as f:
     [dictionary.append(word.strip().lower()) for word in f.read().split()]
 dictionary = set(dictionary)
 
+
 def get_possible_dict_words(draw):
     """Get all possible words from a draw (list of letters) which are
        valid dictionary words. Use _get_permutations_draw and provided
